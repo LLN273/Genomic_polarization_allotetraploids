@@ -11,8 +11,7 @@
 ulimit -c unlimited
 
 
-## Scrip used for removing regions with too many masked positions (N) in the MSA (site removed if # masked sites > 2)
-## Run separately for each locus.
+## Scrip used for removing regions with too many masked positions (N) in the MSAs (site removed if # masked sites > 2)
 
 
 # load modules
