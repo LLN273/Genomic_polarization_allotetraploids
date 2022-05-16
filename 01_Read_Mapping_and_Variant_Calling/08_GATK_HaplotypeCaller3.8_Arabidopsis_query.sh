@@ -47,7 +47,7 @@ refGenomefolder=${6:?msg}
 # ploidy
 SPLOIDY=${7:?msg}
 
-# Intervals list (BED format) exome data 
+# Intervals list (BED format)
 ANNF=${8:?msg}
 
 
