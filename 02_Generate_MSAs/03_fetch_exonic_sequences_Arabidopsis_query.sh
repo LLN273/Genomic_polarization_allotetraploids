@@ -59,7 +59,7 @@ echo
 #### Get fasta for each locus listed in bed file
 bedtools getfasta -name \
 	          -fo $SNIC_TMP/${sampleName}.${Gfeature}_AUX.fa \
-            -fi $SNIC_TMP/${InFile1%.gz} \
+                  -fi $SNIC_TMP/${InFile1%.gz} \
 	          -bed $ANNF
 
 
