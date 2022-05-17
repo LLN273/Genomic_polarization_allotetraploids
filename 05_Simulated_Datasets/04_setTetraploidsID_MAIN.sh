@@ -44,7 +44,7 @@ for k in `seq 1 1 4`; do 			# different simulation conditions
    echo $GO_RR
 
 
-   ./01_setTetraploidsID_query.sh $GO_AA \
+   ./04_setTetraploidsID_query.sh $GO_AA \
                                         $GO_RR \
                                         $GO_NSPEC \
                                         $GO_FOLDER \
