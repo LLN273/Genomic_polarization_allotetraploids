@@ -116,27 +116,27 @@ if [[ $FLAG_MAPPER = "BWA" && $VART = "snps" && $PLOIDY = "2" ]] ; then
                 -T VariantFiltration \
                 -R $SNIC_TMP/${refGenome} \
                 -V $READ1 \
-				-filterName "QD_filter" \
-				-filter "QD < 2.0" \
-				-filterName "FS_filter" \
-				-filter "FS > 10.0" \
-				-filterName "MQ_filter" \
-				-filter "MQ < 40.0" \
-				-filterName "SOR_filter" \
-				-filter "SOR > 5.0" \
-				-filterName "MQRankSum_filter_min" \
-				-filter "MQRankSum < -2.5" \
-				-filterName "MQRankSum_filter_max" \
-				-filter "MQRankSum > 2.5" \
-				-filterName "ReadPosRankSum_filter_min" \
-				-filter "ReadPosRankSum < -2.5" \
-				-filterName "ReadPosRankSum_filter_max" \
-				-filter "ReadPosRankSum > 2.5" \
-				-filterName "Depth_filter_min" \
-				-filter "DP < 3.0" \
-	            --intervals $SNIC_TMP/__targets.interval_list \
-				--downsampling_type NONE \
-				--logging_level ERROR \
+		-filterName "QD_filter" \
+		-filter "QD < 2.0" \
+		-filterName "FS_filter" \
+		-filter "FS > 10.0" \
+		-filterName "MQ_filter" \
+		-filter "MQ < 40.0" \
+		-filterName "SOR_filter" \
+		-filter "SOR > 5.0" \
+		-filterName "MQRankSum_filter_min" \
+		-filter "MQRankSum < -2.5" \
+		-filterName "MQRankSum_filter_max" \
+		-filter "MQRankSum > 2.5" \
+		-filterName "ReadPosRankSum_filter_min" \
+		-filter "ReadPosRankSum < -2.5" \
+		-filterName "ReadPosRankSum_filter_max" \
+		-filter "ReadPosRankSum > 2.5" \
+		-filterName "Depth_filter_min" \
+		-filter "DP < 3.0" \
+	        --intervals $SNIC_TMP/__targets.interval_list \
+		--downsampling_type NONE \
+		--logging_level ERROR \
                 -o $RR/${OUTF}-filtered_tranche_2.vcf
 
 
@@ -152,27 +152,27 @@ if [[ $FLAG_MAPPER = "BWA" && $VART = "snps" && $PLOIDY = "4" ]] ; then
                 -T VariantFiltration \
                 -R $SNIC_TMP/${refGenome} \
                 -V $READ1 \
-				-filterName "QD_filter" \
-				-filter "QD < 2.0" \
-				-filterName "FS_filter" \
-				-filter "FS > 10.0" \
-				-filterName "MQ_filter" \
-				-filter "MQ < 40.0" \
-					-filterName "SOR_filter" \
-					-filter "SOR > 5.0" \
-					-filterName "MQRankSum_filter_min" \
-					-filter "MQRankSum < -2.5" \
-					-filterName "MQRankSum_filter_max" \
-					-filter "MQRankSum > 2.5" \
-					-filterName "ReadPosRankSum_filter_min" \
-					-filter "ReadPosRankSum < -2.5" \
-					-filterName "ReadPosRankSum_filter_max" \
-					-filter "ReadPosRankSum > 2.5" \
-					-filterName "Depth_filter_min" \
-					-filter "DP < 5.0" \
-	            --intervals $SNIC_TMP/__targets.interval_list \
-				--downsampling_type NONE \
-				--logging_level ERROR \
+		-filterName "QD_filter" \
+		-filter "QD < 2.0" \
+		-filterName "FS_filter" \
+		-filter "FS > 10.0" \
+		-filterName "MQ_filter" \
+		-filter "MQ < 40.0" \
+		-filterName "SOR_filter" \
+		-filter "SOR > 5.0" \
+		-filterName "MQRankSum_filter_min" \
+		-filter "MQRankSum < -2.5" \
+		-filterName "MQRankSum_filter_max" \
+		-filter "MQRankSum > 2.5" \
+		-filterName "ReadPosRankSum_filter_min" \
+		-filter "ReadPosRankSum < -2.5" \
+		-filterName "ReadPosRankSum_filter_max" \
+		-filter "ReadPosRankSum > 2.5" \
+		-filterName "Depth_filter_min" \
+	        -filter "DP < 5.0" \
+	        --intervals $SNIC_TMP/__targets.interval_list \
+	        --downsampling_type NONE \
+		--logging_level ERROR \
                 -o $RR/${OUTF}-filtered_tranche_2.vcf
 	
 
@@ -193,25 +193,25 @@ if [[ $VART = "indels" && $PLOIDY = "2" ]] ; then
                 -T VariantFiltration \
                 -R $SNIC_TMP/${refGenome} \
                 -V $READ1 \
-				-filterName "QD_filter" \
-				-filter "QD < 2.0" \
-				-filterName "FS_filter" \
-				-filter "FS > 10.0" \
-					-filterName "SOR_filter" \
-					-filter "SOR > 5.0" \
-					-filterName "MQRankSum_filter_min" \
-					-filter "MQRankSum < -2.5" \
-					-filterName "MQRankSum_filter_max" \
-					-filter "MQRankSum > 2.5" \
-					-filterName "ReadPosRankSum_filter_min" \
-					-filter "ReadPosRankSum < -2.5" \
-					-filterName "ReadPosRankSum_filter_max" \
-					-filter "ReadPosRankSum > 2.5" \
-					-filterName "Depth_filter_min" \
-					-filter "DP < 3.0" \
-	            --intervals $SNIC_TMP/__targets.interval_list \
-				--downsampling_type NONE \
-				--logging_level ERROR \
+		-filterName "QD_filter" \
+		-filter "QD < 2.0" \
+		-filterName "FS_filter" \
+		-filter "FS > 10.0" \
+		-filterName "SOR_filter" \
+		-filter "SOR > 5.0" \
+		-filterName "MQRankSum_filter_min" \
+		-filter "MQRankSum < -2.5" \
+		-filterName "MQRankSum_filter_max" \
+		-filter "MQRankSum > 2.5" \
+		-filterName "ReadPosRankSum_filter_min" \
+		-filter "ReadPosRankSum < -2.5" \
+		-filterName "ReadPosRankSum_filter_max" \
+		-filter "ReadPosRankSum > 2.5" \
+		-filterName "Depth_filter_min" \
+		-filter "DP < 3.0" \
+	        --intervals $SNIC_TMP/__targets.interval_list \
+	        --downsampling_type NONE \
+		--logging_level ERROR \
                 -o $RR/${OUTF}-filtered_tranche_2.vcf
 	
 
@@ -226,25 +226,25 @@ if [[ $VART = "indels" && $PLOIDY = "4" ]] ; then
                 -T VariantFiltration \
                 -R $SNIC_TMP/${refGenome} \
                 -V $READ1 \
-				-filterName "QD_filter" \
-				-filter "QD < 2.0" \
-				-filterName "FS_filter" \
-				-filter "FS > 10.0" \
-					-filterName "SOR_filter" \
-					-filter "SOR > 5.0" \
-					-filterName "MQRankSum_filter_min" \
-					-filter "MQRankSum < -2.5" \
-					-filterName "MQRankSum_filter_max" \
-					-filter "MQRankSum > 2.5" \
-					-filterName "ReadPosRankSum_filter_min" \
-					-filter "ReadPosRankSum < -2.5" \
-					-filterName "ReadPosRankSum_filter_max" \
-					-filter "ReadPosRankSum > 2.5" \
-					-filterName "Depth_filter_min" \
-					-filter "DP < 5.0" \
-	            --intervals $SNIC_TMP/__targets.interval_list \
-				--downsampling_type NONE \
-				--logging_level ERROR \
+		-filterName "QD_filter" \
+		-filter "QD < 2.0" \
+		-filterName "FS_filter" \
+		-filter "FS > 10.0" \
+		-filterName "SOR_filter" \
+		-filter "SOR > 5.0" \
+		-filterName "MQRankSum_filter_min" \
+		-filter "MQRankSum < -2.5" \
+		-filterName "MQRankSum_filter_max" \
+		-filter "MQRankSum > 2.5" \
+		-filterName "ReadPosRankSum_filter_min" \
+		-filter "ReadPosRankSum < -2.5" \
+		-filterName "ReadPosRankSum_filter_max" \
+		-filter "ReadPosRankSum > 2.5" \
+		-filterName "Depth_filter_min" \
+		-filter "DP < 5.0" \
+	        --intervals $SNIC_TMP/__targets.interval_list \
+	        --downsampling_type NONE \
+		--logging_level ERROR \
                 -o $RR/${OUTF}-filtered_tranche_2.vcf
 	
 
