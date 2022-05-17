@@ -119,9 +119,9 @@ for n in `seq 1 1 2`; do		# genomic feature (exons or introns)
       for i in `seq 1 1 ${N_GENES[$k]}`; do                 # cycle through genes
 
          GO_GENE=${GENE_LIST[$k,$i]}
-	       REF_FASTA=${GO_GENE}.${GO_FEATURE}.fa
+	 REF_FASTA=${GO_GENE}.${GO_FEATURE}.fa
                
- 	       # convert sequence to big caps
+ 	 # convert sequence to big caps
          tr a-z A-Z < $GO_AA/$REF_FASTA > $SNIC_TMP/__${GO_GENE}_AUX_1.fa
 
          # in sequence headers, convert '-' to '_'
@@ -139,11 +139,11 @@ for n in `seq 1 1 2`; do		# genomic feature (exons or introns)
                 -gapthreshold $gapTH \
                 -cons 0
 
-        # Notes:
-	      # -gapthreshold <n>    1 - (fraction of sequences with a gap allowed). Range: [0 - 1]
-        # -gapthreshold 0.904 >>>>> maximum number of masked sites allowed is 2 [2/21=0.096]  >>>>>>> 1-0.096=0.904
-        # -gapthreshold 0.93 >>>>> maximum number of masked sites allowed is 2 [2/30=0.0667]  >>>>>>> 1-0.07=0.93
-        # -cons <n>                Minimum percentage of the positions in the original alignment to conserve. Range: [0 - 100]
+         # Notes:
+	 # -gapthreshold <n>    1 - (fraction of sequences with a gap allowed). Range: [0 - 1]
+         # -gapthreshold 0.904 >>>>> maximum number of masked sites allowed is 2 [2/21=0.096]  >>>>>>> 1-0.096=0.904
+         # -gapthreshold 0.93 >>>>> maximum number of masked sites allowed is 2 [2/30=0.0667]  >>>>>>> 1-0.07=0.93
+         # -cons <n>                Minimum percentage of the positions in the original alignment to conserve. Range: [0 - 100]
 
          # convert gaps (-) to masked nucleotides (N)
          sed 's/-/N/g' $SNIC_TMP/__${GO_GENE}_AUX_5.fa > $SNIC_TMP/__${GO_GENE}_AUX_6.fa
@@ -151,7 +151,7 @@ for n in `seq 1 1 2`; do		# genomic feature (exons or introns)
          # convert Z sites to gaps (-)
          sed 's/Z/-/g' $SNIC_TMP/__${GO_GENE}_AUX_6.fa > $SNIC_TMP/__${GO_GENE}_AUX_7.fa
 	   	   
-	       # convert sequence to big caps
+	 # convert sequence to big caps
          tr a-z A-Z < $SNIC_TMP/__${GO_GENE}_AUX_7.fa > $SNIC_TMP/__${GO_GENE}_AUX_8.fa
 
          # convert to single line fasta
@@ -167,7 +167,7 @@ for n in `seq 1 1 2`; do		# genomic feature (exons or introns)
          # Number of masked sites after trimming
          N_after="$(cat $GO_RR/${REF_FASTA%.fa}_trimN.fa | grep -v '^>' | grep -io [N] | wc -l )"
 
- 	       # Total number of sites before trimming
+ 	 # Total number of sites before trimming
          T_before="$(cat $GO_AA/$REF_FASTA | grep -v '^>' | grep -io [A-T] | wc -l )"
 
          # Total number of sites after trimming
@@ -190,7 +190,7 @@ for n in `seq 1 1 2`; do		# genomic feature (exons or introns)
 
          echo $GO_GENE $N_before $N_after $PERCT_before $PERCT_after >> $SRCDIR_INI/$OUTF_GO
 		   
-	       # remove auxiliary files
+	 # remove auxiliary files
          rm -f $SNIC_TMP/__*.fa	   
 
 
