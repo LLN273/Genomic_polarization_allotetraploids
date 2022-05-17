@@ -67,7 +67,7 @@ if [[ $SNAME == "Aarenosaarenosa1_SRR208278X" ]]; then
       java -Xmx5G -jar $PICARD_HOME/picard.jar MergeSamFiles \
 	                                        INPUT=$AA/Aarenosaarenosa1_SRR2082782.LANE-8_MergeBamAlignment.bam \
 	                                        INPUT=$AA/Aarenosaarenosa1_SRR2082785.LANE-7_MergeBamAlignment.bam \
-						                              SORT_ORDER=coordinate \
+						SORT_ORDER=coordinate \
 	                                        O=$SNIC_TMP/${SNAME}.bam
 
 elif [[ $SNAME == "AkamchaticaKWS_DRR054581" ]]; then
@@ -75,7 +75,7 @@ elif [[ $SNAME == "AkamchaticaKWS_DRR054581" ]]; then
       java -Xmx5G -jar $PICARD_HOME/picard.jar MergeSamFiles \
 	                                        INPUT=$AA/AkamchaticaKWS_DRR054581.LANE-2_MergeBamAlignment.bam \
 	                                        INPUT=$AA/AkamchaticaKWS_DRR054581.LANE-7_MergeBamAlignment.bam \
-						                              SORT_ORDER=coordinate \
+						SORT_ORDER=coordinate \
 	                                        O=$SNIC_TMP/${SNAME}.bam
 
 elif [[ $SNAME == "Alyratapetraea3_SRR2040797" ]]; then
@@ -83,8 +83,8 @@ elif [[ $SNAME == "Alyratapetraea3_SRR2040797" ]]; then
       java -Xmx5G -jar $PICARD_HOME/picard.jar MergeSamFiles \
 	                                        INPUT=$AA/Alyratapetraea3_SRR2040797.LANE-2_MergeBamAlignment.bam \
 	                                        INPUT=$AA/Alyratapetraea3_SRR2040797.LANE-3_MergeBamAlignment.bam \
-						                              INPUT=$AA/Alyratapetraea3_SRR2040797.LANE-4_MergeBamAlignment.bam \
-						                              SORT_ORDER=coordinate \
+						INPUT=$AA/Alyratapetraea3_SRR2040797.LANE-4_MergeBamAlignment.bam \
+						SORT_ORDER=coordinate \
 	                                        O=$SNIC_TMP/${SNAME}.bam
 
 elif [[ $SNAME == "Alyratapetraea15_SRR2040828" ]]; then
@@ -92,9 +92,9 @@ elif [[ $SNAME == "Alyratapetraea15_SRR2040828" ]]; then
       java -Xmx5G -jar $PICARD_HOME/picard.jar MergeSamFiles \
 	                                        INPUT=$AA/Alyratapetraea15_SRR2040828_RUN1.LANE-2_MergeBamAlignment.bam \
 	                                        INPUT=$AA/Alyratapetraea15_SRR2040828_RUN1.LANE-3_MergeBamAlignment.bam \
-						                              INPUT=$AA/Alyratapetraea15_SRR2040828_RUN1.LANE-4_MergeBamAlignment.bam \
-						                              INPUT=$AA/Alyratapetraea15_SRR2040828_RUN2.LANE-8_MergeBamAlignment.bam \
-						                              SORT_ORDER=coordinate \
+						INPUT=$AA/Alyratapetraea15_SRR2040828_RUN1.LANE-4_MergeBamAlignment.bam \
+						INPUT=$AA/Alyratapetraea15_SRR2040828_RUN2.LANE-8_MergeBamAlignment.bam \
+						SORT_ORDER=coordinate \
 	                                        O=$SNIC_TMP/${SNAME}.bam 
 
 else
