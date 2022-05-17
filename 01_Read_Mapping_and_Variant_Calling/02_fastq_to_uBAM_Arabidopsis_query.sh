@@ -113,12 +113,12 @@ if [[ "$HEADERT" = "0" ]] ; then
    # There is NO info on header
    # type 0: @SRR1945833.1 SRR492245.1/1
 	   
-   RG_ID=UNKNOWN.${SNAME}.1   			# read group identifier (aka read group name)
-   SM=$SNAME				                # sample name
-   LB=${SNAME}_LIB${LIB_No}			    # Library identifier >> use a different lib number (eg LIB2) if two DNA libraries are prepared for the same sample 
-   PU=$RG_ID					              # platform unit
-   PL=ILLUMINA					            # platform used to generate the data
-   SC=NA					                  # sequencing center
+   RG_ID=UNKNOWN.${SNAME}.1   	        # read group identifier (aka read group name)
+   SM=$SNAME			        # sample name
+   LB=${SNAME}_LIB${LIB_No}		# Library identifier >> use a different lib number (eg LIB2) if two DNA libraries are prepared for the same sample 
+   PU=$RG_ID				# platform unit
+   PL=ILLUMINA				# platform used to generate the data
+   SC=NA		                # sequencing center
 
 
 
@@ -128,14 +128,14 @@ elif [ "$HEADERT" = "1" ]; then
 	  
    # example of line format: @NS500198:23:H0VUMAGXX:3:11401:11643:1016 1:N:0:5
 	  
-   flowcell_ID=$(zcat $READ1 | head -1 | cut -d ' ' -f2 | cut -d ':' -f3)	    # flowcell id 			(H0VUMAGXX)
-   flowcell_lane=$(zcat $READ1 | head -1 | cut -d ' ' -f2 | cut -d ':' -f4)	  # flowcell lane			(3)
+   flowcell_ID=$(zcat $READ1 | head -1 | cut -d ' ' -f2 | cut -d ':' -f3)	# flowcell id (H0VUMAGXX)
+   flowcell_lane=$(zcat $READ1 | head -1 | cut -d ' ' -f2 | cut -d ':' -f4)	# flowcell lane (3)
    RG_ID=${flowcell_ID}.${SNAME}.${flowcell_lane}				# Because some barcodes have troublesome characters (eg '<' or ':'), we will use the sample name as the barcode
-   SM=$SNAME									                          # sample name
-   LB=${SNAME}_LIB${LIB_No}							                # Library identifier (during DNA preparation) >> use a different lib number (eg LIB2) if two DNA libraries are prepared for the same sample 
+   SM=$SNAME									# sample name
+   LB=${SNAME}_LIB${LIB_No}							# Library identifier (during DNA preparation) >> use a different lib number (eg LIB2) if two DNA libraries are prepared for the same sample 
    PU=${flowcell_ID}.${SNAME}.${flowcell_lane}					# Because some barcodes have troublesome characters (eg '<' or ':'), we will use the sample name as the barcode
-   PL=ILLUMINA									                        # platform used to generate the data
-   SC=NA									                              # sequencing center 
+   PL=ILLUMINA									# platform used to generate the data
+   SC=NA									# sequencing center 
 
 
 elif [ "$HEADERT" = "2" ]; then
@@ -147,9 +147,9 @@ elif [ "$HEADERT" = "2" ]; then
    RG_ID=$(zcat $READ1 | head -1 | cut -d ' ' -f2 | cut -d ':' -f1-2 | tr ':' '.')  		# read group identifier (aka read group name)
    SM=$SNAME											# sample name
    LB=${SNAME}_LIB${LIB_No}				# Library identifier >> use a different lib number (eg LIB2) if two DNA libraries are prepared for the same sample 
-   PU=$RG_ID										  # platform unit
-   PL=ILLUMINA										# platform used to generate the data
-   SC=NA									        # sequencing center
+   PU=$RG_ID						# platform unit
+   PL=ILLUMINA						# platform used to generate the data
+   SC=NA						# sequencing center
    																									
 fi
    
