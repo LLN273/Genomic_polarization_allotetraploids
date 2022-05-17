@@ -61,7 +61,7 @@ for r_aux in $( eval echo {001..${REP}} ); do		# replicates; must include leadin
    OUTF=${RR}/REPLICATE_${r_aux}_RefSequenceID.txt
    rm -f $OUTF
 
-   ### Select random reference genome among listed species (excluding tetraploid and outgroup)
+   ### Select random reference sequence among listed species (excluding tetraploid and outgroup)
    cat ${AA}/REPLICATE_${r_aux}_SAMPLE_LIST.txt | head -n-1 | tail -n +2 > $SNIC_TMP/_REFspecies_aux
    
    aux_2="2"
