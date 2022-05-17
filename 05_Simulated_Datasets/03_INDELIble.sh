@@ -12,7 +12,7 @@ ulimit -c unlimited
 set -eo pipefail
 
 
-## Script used to create fasta sequences with INDELIble, based on simulated gene phylogenies.
+## Script used to create fasta sequences (simulated MSA) with INDELIble, based on simulated gene phylogenies.
 ## For wrapper's usage, see simphy manual: https://github.com/adamallo/SimPhy/wiki/Manual#521-input-files-newick-tree-format
 
 
