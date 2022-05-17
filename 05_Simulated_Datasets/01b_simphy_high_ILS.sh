@@ -75,7 +75,7 @@ $simphy -rs 100 \
 	-si f:2 \
 	-sl f:${ntaxa} \
 	-sb f:${b} \
-  -sd f:0 \
+        -sd f:0 \
 	-sp f:200000 \
 	-hs ln:1.5,1 \
 	-hl ln:1.2,1 \
@@ -83,7 +83,7 @@ $simphy -rs 100 \
 	-su e:10000000 \
 	-so f:1 \
 	-od 1 \
-  -op 1 \
+        -op 1 \
 	-ot 0 \
 	-v 3 \
 	-cs 5527 \
