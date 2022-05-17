@@ -11,7 +11,7 @@
 ###
 
 ### Input arguments
-### 1. MSA
+### 1. MSA (fasta format)
 ### 2. Number of species (including outgroup)
 ### 3. Reference sequence ID
 ### 4. Allopolyploid sequence ID
