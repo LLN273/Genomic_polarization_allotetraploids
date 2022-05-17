@@ -108,7 +108,7 @@ for i in `seq 1 1 $N_GENES`; do
       touch $RR/${AUX_fa%.fa}-ALT.fasta    	#if MSA file is empty
    fi
 
-
+   rm -f $RR/$AUX_fa
 
 done
 
