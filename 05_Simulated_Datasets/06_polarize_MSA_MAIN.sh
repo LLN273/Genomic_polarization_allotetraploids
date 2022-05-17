@@ -4,7 +4,7 @@
 
 ## Script used to process simulated MSAs:
 ## (1) creates diploid species (collapses sequences for the two haploid individuals belonging to the same species);
-## (2) creates allotetraploid sequence (collapses sequences for the species);
+## (2) creates allotetraploid sequence (collapses sequences for two diploid species);
 ## (3) polarizes allotetraploid sequence.
 
 ### Input MSA files must contain two haploid sequences per species (only one sequence for outgroup [0_0_0])
