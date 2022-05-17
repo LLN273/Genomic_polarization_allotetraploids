@@ -109,7 +109,7 @@ N_GENES[2]=${#GENE_LIST_2[@]}
 declare -A READS  
 
 for i in `seq 1 1 ${N_SAMPLES}`; do       #loop through samples     
-      READS[1,$i]=${SAMPLE_LIST[1,$i]}.exons.concatenated.fa
+   READS[1,$i]=${SAMPLE_LIST[1,$i]}.exons.concatenated.fa
 done
 
 
@@ -138,22 +138,22 @@ for k in `seq 1 1 2`; do 						# loop through ref genomes
    
          for i in `seq 1 1 ${N_SAMPLES}`; do  			# loop through samples
    
-	          DNAFILE_exons=${READS[1,$i]} 
+	    DNAFILE_exons=${READS[1,$i]} 
             GO_SAMPLE=${SAMPLE_LIST[1,$i]}
          
-	          echo $GO_GENE
-	          echo $GO_SAMPLE
-	          echo $DNAFILE_exons      
+	    echo $GO_GENE
+	    echo $GO_SAMPLE
+	    echo $DNAFILE_exons      
             echo $GO_AA
             echo $GO_RR
    
             # paste sequences associated to gene into a single fasta file
-             header_AUX=${GO_SAMPLE}
-	           body_AUX[1]="$(grep -A 1 $GO_GENE $GO_AA/$DNAFILE_exons | grep -v "^>")"
+            header_AUX=${GO_SAMPLE}
+	    body_AUX[1]="$(grep -A 1 $GO_GENE $GO_AA/$DNAFILE_exons | grep -v "^>")"
 	  
-	           echo ">"${header_AUX} >> $GO_RR/$GO_OUTFILE 
-	           echo ${body_AUX[1]} >> $GO_RR/$GO_OUTFILE
-             echo
+	    echo ">"${header_AUX} >> $GO_RR/$GO_OUTFILE 
+	    echo ${body_AUX[1]} >> $GO_RR/$GO_OUTFILE
+            echo
 
          done
    done
