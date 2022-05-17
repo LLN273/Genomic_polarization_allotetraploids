@@ -12,7 +12,7 @@ ulimit -c unlimited
 
 
 
-## Script used to generate simulated gene phylogenies with SimPhy
+## Script used to generate simulated gene phylogenies with SimPhy [Moderate ILS scenarios]
 ## For each reference tree (created randomly), 1200 gene trees are created. This process is repeated for 100 replicates.
 
 ## simphy manual: https://github.com/adamallo/SimPhy/wiki/Manual#521-input-files-newick-tree-format
@@ -64,7 +64,7 @@ ntaxa=16
 
 
 
-## Run simphy
+## Run simphy (Moderate ILS scenario)
 
 mkdir -p $RR/$OUTF
 
