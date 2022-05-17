@@ -80,28 +80,28 @@ java -Xmx40G -jar $PICARD_HOME/picard.jar SamToFastq \
                                           INPUT=$INBAM \
                                           FASTQ=/dev/stdout \
                                           CLIPPING_ATTRIBUTE=XT \
-   					                              CLIPPING_ACTION=2 \
-					                                INTERLEAVE=true \
-					                                NON_PF=true \
+   					  CLIPPING_ACTION=2 \
+					  INTERLEAVE=true \
+					  NON_PF=true \
                                           TMP_DIR=$SNIC_TMP/__BWA_aux1 | \
 bwa mem -t $SLURM_NTASKS \
             -M \
-   	        -p \
-   	        $SNIC_TMP/$refGenome \
+   	    -p \
+   	    $SNIC_TMP/$refGenome \
             /dev/stdin | \
 java -Xmx40G -jar $PICARD_HOME/picard.jar  MergeBamAlignment \
                                               ALIGNED_BAM=/dev/stdin \
                                               UNMAPPED_BAM=$INBAM \
                                               OUTPUT=$RR/${SNAME}_MergeBamAlignment.bam \
                                               REFERENCE_SEQUENCE=$SNIC_TMP/$refGenome \
-    					                                CREATE_INDEX=true \
-     					                                ADD_MATE_CIGAR=true \
+    					      CREATE_INDEX=true \
+     					      ADD_MATE_CIGAR=true \
                                               CLIP_ADAPTERS=false \
- 					                                    CLIP_OVERLAPPING_READS=true \
+ 					      CLIP_OVERLAPPING_READS=true \
                                               INCLUDE_SECONDARY_ALIGNMENTS=true \
- 					                                    MAX_INSERTIONS_OR_DELETIONS=-1 \
+ 					      MAX_INSERTIONS_OR_DELETIONS=-1 \
                                               PRIMARY_ALIGNMENT_STRATEGY=MostDistant \
- 					                                    ATTRIBUTES_TO_RETAIN=XS \
+ 					      ATTRIBUTES_TO_RETAIN=XS \
                                               TMP_DIR=$SNIC_TMP/__BWA_aux3
 
 
