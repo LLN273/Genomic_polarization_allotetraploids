@@ -77,7 +77,7 @@ for n in `seq 1 1 2`; do 						# loop through genomic features (exons, introns)
          GO_AA=${AA[$k]}
          GO_RR=$GO_AA     
          DNAFILE_A=${SAMPLE_LIST[1,$i]}.${Gfeature[$n]}.fa
-	       GO_SAMPLE=${SAMPLE_LIST[1,$i]}  
+	 GO_SAMPLE=${SAMPLE_LIST[1,$i]}  
 	     
          echo $GO_SAMPLE   
          echo $DNAFILE_A   
@@ -86,7 +86,7 @@ for n in `seq 1 1 2`; do 						# loop through genomic features (exons, introns)
                                            
 
 
-	       # Order fasta headers alphabetically 
+	 # Order fasta headers alphabetically 
          perl -pe 's/[\r\n]+/;/g; s/>/\n>/g' $GO_AA/$DNAFILE_A | sort -t"[" -k2,2V | sed 's/;/\n/g' | sed '/^$/d' > $GO_RR/${DNAFILE_A%.fa}_aux1.fa
 
 		 
@@ -94,9 +94,9 @@ for n in `seq 1 1 2`; do 						# loop through genomic features (exons, introns)
          cat $GO_RR/${DNAFILE_A%.fa}_aux1.fa | awk -F"." '/>/{$0=">"$1}1' > $GO_RR/${DNAFILE_A%.fa}_aux2.fa
 
 
-	       #### concatenate exon sequences associated to the same gene
-	       awk '/^>/ {if(prev!=$0) {prev=$0;printf("\n%s\n",$0);} next;} {printf("%s",$0);} END {printf("\n");}' $GO_RR/${DNAFILE_A%.fa}_aux2.fa > $GO_RR/_AUX_${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa
-	       cat $GO_RR/_AUX_${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa | tail -n +2 > $GO_RR/${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa
+         #### concatenate exon sequences associated to the same gene
+         awk '/^>/ {if(prev!=$0) {prev=$0;printf("\n%s\n",$0);} next;} {printf("%s",$0);} END {printf("\n");}' $GO_RR/${DNAFILE_A%.fa}_aux2.fa > $GO_RR/_AUX_${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa
+         cat $GO_RR/_AUX_${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa | tail -n +2 > $GO_RR/${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa
 
          rm -f $GO_RR/_AUX_${GO_SAMPLE}.${Gfeature[$n]}.concatenated.fa
          rm -f $GO_RR/${DNAFILE_A%.fa}_aux*.fa
