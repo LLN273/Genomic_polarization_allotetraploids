@@ -135,17 +135,17 @@ cd $RR
 # when using Diamond (fastest method)
 $ORTHOFINDER -f $RR/$PTF \
 	     -t $SLURM_NTASKS \
-       -a $SLURM_NTASKS \
+             -a $SLURM_NTASKS \
 	     -S diamond \
-       -o $RR/$RRO
+             -o $RR/$RRO
 
 
 
 # when using MMseqs2 (compiled version not working; use source python script) [MMseqs2 is slower than Diamond, about twice as slow]
 #$ORTHOFINDER -f $RR/$PTF \
-#	            -t $SLURM_NTASKS \
+#	      -t $SLURM_NTASKS \
 #             -a $SLURM_NTASKS \
-#	            -S mmseqs
+#	      -S mmseqs
 
 ##             -o $RR/$RRO   # -o option not valid when using python script   >> results saved in genomes folder when using python script
 
@@ -155,7 +155,7 @@ $ORTHOFINDER -f $RR/$PTF \
 #$ORTHOFINDER -f $RR/$PTF \
 #             -t $SLURM_NTASKS \
 #             -a $SLURM_NTASKS \
-#	            -S blast \
+#	      -S blast \
 #             -o $RR/$RRO 
 
 
@@ -163,7 +163,7 @@ $ORTHOFINDER -f $RR/$PTF \
 # run OrthoFinder (test dataset)
 
 #$ORTHOFINDER -f /home/luisleal/MYAPPS/OrthoFinder-2.3.1/ExampleData \
-#	            -S blast \
+#	      -S blast \
 #             -o $RR 
 
 
