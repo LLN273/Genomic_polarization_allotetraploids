@@ -170,14 +170,14 @@ echo
 echo '5a. Running bedtools maskfasta'
 bedtools maskfasta \
 	     -fi $SNIC_TMP/${SNAME}-bcftoolsConsensus.fa \
-		 -bed $SNIC_TMP/${SNAME}_snpmask.vcf \
+	     -bed $SNIC_TMP/${SNAME}_snpmask.vcf \
 	     -fo $SNIC_TMP/${SNAME}-bcftoolsConsensus_aux.fa
 
 echo
 echo '5b. Running bedtools maskfasta, deletions'
 bedtools maskfasta \
 	     -fi $SNIC_TMP/${SNAME}-bcftoolsConsensus_aux.fa \
-		 -bed $SNIC_TMP/VCF_indels1.bed \
+	     -bed $SNIC_TMP/VCF_indels1.bed \
 	     -fo $SNIC_TMP/${SNAME}-bcftoolsConsensus_FINAL.fa
 
 
