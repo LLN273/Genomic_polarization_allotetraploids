@@ -2,7 +2,7 @@
 
 
 ## Script used to fix tree tips so that the two (haploid) individuals belonging to the same species are monophyletic 
-## (as these will be recoded as one single individual at a later stage)
+## (as these will be recoded as one single diploid individual at a later stage)
 
 
 ####################################### paths and folder names
