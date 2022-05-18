@@ -67,7 +67,7 @@ for i in $( eval echo {0001..${NLOCUS}} ); do		# locus/genes; must include leadi
    echo "Replicate, gene, No. species:" ${r_aux} $i $GO_NSPEC
 
    ## remove tip, if needed
-   Rscript --no-save ./01_equalize_branch_length.R $gene_tree \
+   Rscript --no-save ./02_equalize_branch_length.R $gene_tree \
                                                    $GO_RR \
                                                    $OUTFile \
                                                    $GO_NSPEC
