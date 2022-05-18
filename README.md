@@ -8,7 +8,7 @@ J.L. Leal, Pascal Milesi, Eva Hodková, Jarkko Salojärvi, and Martin Lascoux
 ____
 
 
-If you made it to this page, you are likely looking for the script used to phase allotetraploid sequences using our polarization protocol.
+If you made it to this page, you are likely looking for the script used to phase allotetraploid sequences using the genomic polarization protocol.
 
 The script is called "01s_polarizeTETRA.py" and is written in python3. You can find it in the folder "03_Polarize_Allotetraploid" above.
 
