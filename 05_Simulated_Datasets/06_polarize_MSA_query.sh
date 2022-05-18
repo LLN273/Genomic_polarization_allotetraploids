@@ -89,7 +89,7 @@ echo
 mkdir -p $RR/$r_aux
 cd $RR/$r_aux
 
-rsync -ah $SRCDIR_INI/03s_polarizeMSA_fullCODED_ALT_TETRA.py .
+rsync -ah $SRCDIR_INI/06s_polarizeMSA_TETRA.py .
 
 
 for l_aux in $( eval echo {001..${NLOCUS}} ); do		# run for each locus; must include leading zeros (LOCUS_0001, LOCUS_0002, etc)
