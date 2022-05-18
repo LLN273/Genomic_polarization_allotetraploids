@@ -19,10 +19,11 @@ python3 01s_polarizeTETRA.py [input.fasta] [No. species] [refSequence ID] [polyp
 ```
 
 Input arguments:
-- <input.fasta>: MSA in fasta format. Sequences are assumed to be aligned and coded using IUPAC nomenclature. 
+- [input.fasta]: MSA in fasta format. Sequences are assumed to be aligned and coded using IUPAC nomenclature. 
   If your MSA includes gaps (-), recode them as masked sites (N) before running this script.                   
-- <No. species>: Number of species in MSA.
-- [refSequence ID>]: Reference sequence ID (polarizing sequence), as shown in MSA.
+- [No. species]: Number of species in MSA.
+- [refSequence ID]: Reference sequence ID (polarizing sequence), as shown in MSA.
 - [polyploid ID]: Allopolyploid sequence ID, as shown in MSA.
+
 
 If you use this script, please cite the paper listed above.
