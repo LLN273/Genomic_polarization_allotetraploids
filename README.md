@@ -25,5 +25,4 @@ Input arguments:
 - <refSequence ID>: Reference sequence ID (polarizing sequence), as shown in MSA.
 - <polyploid ID>: Allopolyploid sequence ID, as shown in MSA.
 
-
 If you use this script, please cite the paper listed above.
