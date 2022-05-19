@@ -25,5 +25,6 @@ Input arguments:
 - [refSequence ID]: Reference sequence ID (polarizing sequence), as shown in MSA.
 - [polyploid ID]: Allopolyploid sequence ID, as shown in MSA.
 
+NOTE: When running this script over a very large number of loci, you may occasionally get the following error message "Error: check number of sequences in fasta file". This happens if some of your MSAs are missing some sequences. This could have happened for a variety of reasons. For instance, trimAl, a program used to clean MSAs, will remove any sequence that contains only masked sites (NNNNN). If only a few of your MSAs are missing sequences, you can ignore the error messages you get when running the polarization script.
 
 If you use this script, please cite the paper listed above.
