@@ -162,7 +162,7 @@ Copy this script to your working folder and then run:
 
 ```bash
 Rscript --no-save 05_Polyploid_pairing_analysis.R \
-                            "astral_infile.txt " \
+                            "astral_infile.txt" \
                             "T-9-14" \
                             "0" \
                              ./ \
