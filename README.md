@@ -139,7 +139,7 @@ It is usually recommended for branches with very low bootstrap support to be con
 Finally, we run ASTRAL in exact mode (-x; meaning that the entire tree space is tested. This option should only be used if the number of species included in the phylogeny is relatively small, e.g. <20). We will also request an output tree with branch quartet support values (-t 8). This should take a couple of minutes.
 
 ```bash
-java -jar ~/path/to/astral/astral.5.7.8.jar \
+java -jar /path/to/astral/astral.5.7.8.jar \
               -i astral_infile_BS30.newick \
               -o astral_outfile_BS30.quartet.t8.newick \
               -t 8 \
