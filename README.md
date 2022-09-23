@@ -51,7 +51,7 @@ You also need to have [Python3](https://www.python.org/) and [R](https://www.r-p
 
 ## 2. Input data
 
-We will be using a small dataset that contains multiple sequence alignments (MSAs) for 50 loci that have evolved under moderate levels of incomplete lineage sorting (ILS). Each MSA contains nucleotide sequences for fifteen diploid species and one allotetraploid species ("T-9-14") whose ancient parental species are phylogenetically located near species "10" and "16". Each species included in the MSA, including the allotetraploid, is represented by a single nucleic acid sequence. Heterozygotic sites are expected to be coded according to IUPAC nomenclature *but the input data does not need to be pre-phased.* It is assumed sequences are aligned.
+We will be using a small dataset that contains multiple sequence alignments (MSAs) for 50 loci that have evolved under moderate levels of incomplete lineage sorting (ILS). Each MSA contains nucleotide sequences for fifteen diploid species and one allotetraploid species ("T-9-14") whose ancient parental species, now extinct, are phylogenetically located near species "10" and "16". Each species included in the MSA, including the allotetraploid, is represented by a single nucleic acid sequence. Heterozygotic sites are expected to be coded according to the IUPAC nomenclature *but the input data does not need to be pre-phased.* It is assumed sequences are aligned.
 
 You can download the test data [here](https://github.com/LLN273/Genomic_polarization_allotetraploids/raw/main/aux/MSA_test_data.zip). 
 
@@ -68,7 +68,7 @@ This is the general command used to polarize the allotetraploid sequence:
 python3 01s_polarizeTETRA.py [input.fasta] [No. species] [refSequence ID] [polyploid ID]
 ```
 
-During the first iteration, the reference sequence used to polarize the allotetraploid ("T-9-14") is selected randomly among the diploid species included in the MSA. For this example, we will use species "11" as the reference sequence. There are a total of sixteen sequences in the MSA. For locus 0001, the command used to polarize the allopolyploid is therefore:
+During the first iteration, the reference sequence used to polarize the allotetraploid ("T-9-14") is selected randomly among the diploid species included in the MSA. For this example, we will use species "11" as the reference sequence. There are sixteen sequences in the MSA. For locus 0001, the command used to polarize the allopolyploid is therefore:
 
 ```bash
 python3 01s_polarizeTETRA.py locus_0001.fa 16 "11" "T-9-14"
@@ -119,7 +119,7 @@ We will use ASTRAL [3], a super-tree inference method statistically consistent u
 
 Before running ASTRAL, we must prepare the input file, which is a file containing all the consensus trees inferred using IQ-TREE2. For the current example, this file should contain 50 gene trees.
 
-You can produce ASTRAL's input file using the following command:
+You can generate ASTRAL's input file using the following command:
 
 ```bash
 rm -f astral_infile.txt
@@ -136,7 +136,7 @@ It is usually recommended for branches with very low bootstrap support to be con
 /path/to/newick_utils/src/nw_ed astral_infile.txt 'i & b<=30' o > astral_infile_BS30.newick
 ```
 
-Finally, we run ASTRAL in exact mode (-x; meaning that the entire tree space is tested. This option should only be used if the number of species included in the phylogeny is relatively small, e.g. <20) and request an output tree with branch quartet support values (-t 8). This should take a couple of minutes.
+Finally, we run ASTRAL in exact mode (-x; meaning that the entire tree space is tested. This option should only be used if the number of species included in the phylogeny is relatively small, e.g. <20). We will also request an output tree with branch quartet support values (-t 8). This should take a couple of minutes.
 
 ```bash
 java -jar ~/path/to/astral/astral.5.7.8.jar \
@@ -169,7 +169,7 @@ Rscript --no-save 05_Polyploid_pairing_analysis.R \
                             "sister_ID_analysis_GENE_TREES.txt"
 ```
 
-The output file reveals that in 56% of all gene trees, the polarized allotetraploid pairs with either species "10" (32%) or species "3" (24%):
+The output file reveals that for 56% of all gene trees the polarized allotetraploid pairs either with species "10" (32%) or species "3" (24%):
 
 ```bash
 cat sister_ID_analysis_GENE_TREES.txt
@@ -239,7 +239,7 @@ The polyploid pairing frequencies after the third iteration are:
 
 ## 8. Fourth iteration
 
-During the fourth iteration, species "10" was used as the reference sequence. The polarized allotetraploid pairs again with species "16" (Fig. 4), signaling that the iterative procedure has converged. The analysis indicates that the two species closest to the allopolyploid's parental species are species "10" and "16" (from among those included in the analysis).
+During the fourth iteration, species "10" was used as the reference sequence. The polarized allotetraploid pairs again with species "16" (Fig. 4), signaling that the iterative procedure has converged. The analysis indicates that the two species closest to the allopolyploid's ancient parental species are species "10" and "16" (from among those included in the analysis).
 
 <img src="https://raw.githubusercontent.com/LLN273/Genomic_polarization_allotetraploids/main/aux/Fig_4_tutorial.png" width="1000" />
 
